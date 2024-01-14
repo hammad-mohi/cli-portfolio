@@ -14,6 +14,7 @@ export const ProjectsIntro = styled.div`
 export const ProjectTitle = styled.div`
   font-weight: 700;
   margin-bottom: 0.25rem;
+  color: ${({ theme }) => theme.colors?.primary};
 `;
 
 export const ProjectDesc = styled.div`

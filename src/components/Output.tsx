@@ -7,9 +7,12 @@ import GeneralOutput from "./commands/GeneralOutput";
 import Gui from "./commands/Gui";
 import Help from "./commands/Help";
 import Welcome from "./commands/Welcome";
+import Work from "./commands/Work";
 import History from "./commands/History";
 import Projects from "./commands/Projects";
 import Socials from "./commands/Socials";
+import Sudo from "./commands/Sudo";
+import Repo from "./commands/Repo";
 import Themes from "./commands/Themes";
 import { OutputContainer, UsageDiv } from "./styles/Output.styled";
 import { termContext } from "./Terminal";
@@ -23,7 +26,7 @@ type Props = {
 const Output: React.FC<Props> = ({ index, cmd }) => {
   const { arg } = useContext(termContext);
 
-  const specialCmds = ["projects", "socials", "themes", "echo"];
+  const specialCmds = ["projects", "socials", "themes", "echo", "sudo"];
 
   // return 'Usage: <cmd>' if command arg is not valid
   // eg: about tt
@@ -37,17 +40,20 @@ const Output: React.FC<Props> = ({ index, cmd }) => {
           about: <About />,
           clear: <Clear />,
           echo: <Echo />,
-          education: <Education />,
+          edu: <Education />,
           email: <Email />,
           gui: <Gui />,
           help: <Help />,
           history: <History />,
           projects: <Projects />,
-          pwd: <GeneralOutput>/home/satnaing</GeneralOutput>,
+          pwd: <GeneralOutput>/home/hmohiuddin</GeneralOutput>,
           socials: <Socials />,
+          sudo: <Sudo />,
+          repo: <Repo />,
           themes: <Themes />,
           welcome: <Welcome />,
           whoami: <GeneralOutput>visitor</GeneralOutput>,
+          work: <Work />,
         }[cmd]
       }
     </OutputContainer>

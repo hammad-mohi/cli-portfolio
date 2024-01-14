@@ -54,10 +54,10 @@ describe("Terminal Component", () => {
       );
     });
 
-    it("should return '/home/satnaing' when user type 'pwd' cmd", async () => {
+    it("should return '/home/hmohiuddin' when user type 'pwd' cmd", async () => {
       await user.type(terminalInput, "pwd{enter}");
       expect(screen.getByTestId("latest-output").firstChild?.textContent).toBe(
-        "/home/satnaing"
+        "/home/hmohiuddin"
       );
     });
 
@@ -75,7 +75,7 @@ describe("Terminal Component", () => {
         typedCommands.push(cmd.textContent || "");
       });
 
-      expect(typedCommands).toEqual(["welcome", "whoami", "history"]);
+      expect(typedCommands).toEqual(["0. welcome", "1. whoami", "2. history"]);
     });
 
     it("should clear everything when user type 'clear' cmd", async () => {
@@ -118,12 +118,13 @@ describe("Terminal Component", () => {
 
     const otherCmds = [
       "about",
-      "education",
+      "edu",
       "help",
       "history",
       "projects",
       "socials",
       "themes",
+      "work",
     ];
     otherCmds.forEach(cmd => {
       it(`should render ${cmd} component when user type '${cmd}' cmd`, async () => {
@@ -150,19 +151,20 @@ describe("Terminal Component", () => {
       await user.type(terminalInput, "email{enter}");
       expect(window.open).toHaveBeenCalled();
       expect(screen.getByTestId("latest-output").firstChild?.textContent).toBe(
-        "contact@satnaing.dev"
+        "contact@hamismad.com"
       );
     });
 
-    const nums = [1, 2, 3, 4];
-    nums.forEach(num => {
+    const projectNums = [1];
+    projectNums.forEach(num => {
       it(`should redirect to project URL when user type 'projects go ${num}' cmd`, async () => {
         await user.type(terminalInput, `projects go ${num}{enter}`);
         expect(window.open).toHaveBeenCalled();
       });
     });
 
-    nums.forEach(num => {
+    const socialNums = [1, 2, 3];
+    socialNums.forEach(num => {
       it(`should redirect to social media when user type 'socials go ${num}' cmd`, async () => {
         await user.type(terminalInput, `socials go ${num}{enter}`);
         expect(window.open).toHaveBeenCalled();
@@ -173,7 +175,7 @@ describe("Terminal Component", () => {
   describe("Invalid Arguments", () => {
     const specialUsageCmds = ["themes", "socials", "projects"];
     const usageCmds = allCmds.filter(
-      cmd => !["echo", ...specialUsageCmds].includes(cmd)
+      cmd => !["echo", "sudo", ...specialUsageCmds].includes(cmd)
     );
 
     usageCmds.forEach(cmd => {
@@ -202,9 +204,9 @@ describe("Terminal Component", () => {
         window.open = vi.fn();
 
         // firstly run commands correct options
-        await user.type(terminalInput, `projects go 4{enter}`);
-        await user.type(terminalInput, `socials go 4{enter}`);
-        await user.type(terminalInput, `themes set espresso{enter}`);
+        await user.type(terminalInput, `projects go 1{enter}`);
+        await user.type(terminalInput, `socials go 2{enter}`);
+        await user.type(terminalInput, `themes set ubuntu{enter}`);
 
         // then run cmd with incorrect options
         await user.type(terminalInput, `${cmd} ${arg}{enter}`);

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-export const EduIntro = styled.div`
+export const WorkIntro = styled.div`
   margin-bottom: 0.75rem;
 `;
 
-export const EduList = styled.div`
+export const WorkList = styled.div`
   margin-bottom: 1rem;
+  margin-left: 1rem;
 
   .title {
     font-weight: 700;
