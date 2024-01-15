@@ -1,5 +1,6 @@
 import { WorkIntro, WorkList } from "../styles/Work.styled";
 import { Wrapper } from "../styles/Output.styled";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Work: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Work: React.FC = () => {
           <div className="desc">
             <a href={link} target="_blank" rel="noreferrer noopener">
               {desc}{" "}
+              <FaExternalLinkAlt size={12} style={{ display: "inline" }} />
             </a>
           </div>
           <div className="loc">{loc}</div>

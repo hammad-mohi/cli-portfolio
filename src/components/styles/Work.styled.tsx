@@ -16,6 +16,7 @@ export const WorkList = styled.div`
 
   .desc {
     color: ${({ theme }) => theme.colors?.secondary};
+    margin-bottom: 0.2rem;
   }
 
   .desc > a {
@@ -26,9 +27,11 @@ export const WorkList = styled.div`
   .loc {
     font-style: italic;
     color: ${({ theme }) => theme.colors?.text[100]};
+    margin-bottom: 0.2rem;
   }
 
   .dates {
     color: ${({ theme }) => theme.colors?.text[200]};
+    margin-bottom: 0.2rem;
   }
 `;

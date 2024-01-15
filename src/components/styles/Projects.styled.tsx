@@ -12,9 +12,12 @@ export const ProjectsIntro = styled.div`
 `;
 
 export const ProjectTitle = styled.div`
-  font-weight: 700;
   margin-bottom: 0.25rem;
   color: ${({ theme }) => theme.colors?.primary};
+
+  :hover {
+    font-weight: 700;
+  }
 `;
 
 export const ProjectDesc = styled.div`

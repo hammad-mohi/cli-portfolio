@@ -12,6 +12,7 @@ import {
 } from "../styles/Projects.styled";
 import { termContext } from "../Terminal";
 import Usage from "../Usage";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects: React.FC = () => {
   const { arg, history, rerender } = useContext(termContext);
@@ -39,12 +40,22 @@ const Projects: React.FC = () => {
   ) : (
     <div data-testid="projects">
       <ProjectsIntro>
-        “Talk is cheap. Show me the code”? I got you. <br />
-        Here are some of my projects you shouldn't misss
+        Here are some of the projects I've worked on:
       </ProjectsIntro>
-      {projects.map(({ id, title, desc }) => (
+      {projects.map(({ id, title, desc, url }) => (
         <ProjectContainer key={id}>
-          <ProjectTitle>{`${id}. ${title}`}</ProjectTitle>
+          <ProjectTitle>
+            {id}.{" "}
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer noopener"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {title}{" "}
+              <FaExternalLinkAlt size={12} style={{ display: "inline" }} />
+            </a>
+          </ProjectTitle>
           <ProjectDesc>{desc}</ProjectDesc>
         </ProjectContainer>
       ))}
@@ -57,7 +68,7 @@ const projects = [
   {
     id: 1,
     title: "HomeAmie",
-    desc: "A new home real estate marketplace",
+    desc: "A pre-construction home real estate marketplace.",
     url: "https://homeamie.com",
   },
 ];

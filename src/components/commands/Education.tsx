@@ -1,5 +1,6 @@
 import { EduIntro, EduList } from "../styles/Education.styled";
 import { Wrapper } from "../styles/Output.styled";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Education: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Education: React.FC = () => {
           <div className="desc">
             <a href={link} target="_blank" rel="noreferrer noopener">
               {desc}{" "}
+              <FaExternalLinkAlt size={12} style={{ display: "inline" }} />
             </a>
           </div>
           <div className="loc">{loc}</div>

@@ -6,6 +6,7 @@ export const EduIntro = styled.div`
 
 export const EduList = styled.div`
   margin-bottom: 1rem;
+  margin-left: 1rem;
 
   .title {
     font-weight: 700;
@@ -15,6 +16,7 @@ export const EduList = styled.div`
 
   .desc {
     color: ${({ theme }) => theme.colors?.secondary};
+    margin-bottom: 0.2rem;
   }
 
   .desc > a {
@@ -25,9 +27,11 @@ export const EduList = styled.div`
   .loc {
     font-style: italic;
     color: ${({ theme }) => theme.colors?.text[100]};
+    margin-bottom: 0.2rem;
   }
 
   .dates {
     color: ${({ theme }) => theme.colors?.text[200]};
+    margin-bottom: 0.2rem;
   }
 `;

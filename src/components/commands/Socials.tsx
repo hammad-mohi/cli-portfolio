@@ -9,6 +9,7 @@ import {
 } from "../../utils/funcs";
 import { termContext } from "../Terminal";
 import Usage from "../Usage";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Socials: React.FC = () => {
   const { arg, history, rerender } = useContext(termContext);
@@ -40,7 +41,18 @@ const Socials: React.FC = () => {
         <CmdList key={title}>
           <Cmd>{`${id}. ${title}`}</Cmd>
           {generateTabs(tab)}
-          <CmdDesc>- {url}</CmdDesc>
+          <CmdDesc>
+            -{" "}
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer noopener"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {url}{" "}
+              <FaExternalLinkAlt size={12} style={{ display: "inline" }} />
+            </a>
+          </CmdDesc>
         </CmdList>
       ))}
       <Usage cmd="socials" marginY />
