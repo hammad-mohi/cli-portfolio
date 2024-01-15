@@ -35,6 +35,8 @@
     "@typescript-eslint/parser": "^5.59.6",
     "@vitejs/plugin-react": "^4.0.0",
     "@vitest/coverage-c8": "^0.31.1",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -47,6 +49,8 @@
     "jsdom": "^22.0.0",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
+    "tailwindcss": "^3.4.1",
+    "twin.macro": "^3.4.0",
     "typescript": "5.1.6",
     "vite": "^4.3.8",
     "vite-plugin-pwa": "^0.14.7",
@@ -57,5 +61,10 @@
       "eslint",
       "prettier --write"
     ]
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
   }
 }
