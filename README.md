@@ -20,12 +20,12 @@ My perfolio website in terminal version developed with React, TypeScript and Sty
 
 ## Tech Stack
 
-**Frontend** - [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
-**Styling** - [Styled-Components](https://styled-components.com/)
-**UI/UX** - [Figma](https://figma.com/)
-**State Management** - [ContextAPI](https://reactjs.org/docs/context.html)
-**Testing** - [Vitest](https://vitest.dev/), [React Testing Library](https://testing-library.com/)
-**Deployment** - [Netlify](https://app.netlify.com/)
+- **Frontend** - [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
+- **Styling** - [Styled-Components](https://styled-components.com/)
+- **UI/UX** - [Figma](https://figma.com/)
+- **State Management** - [ContextAPI](https://reactjs.org/docs/context.html)
+- **Testing** - [Vitest](https://vitest.dev/), [React Testing Library](https://testing-library.com/)
+- **Deployment** - [Netlify](https://app.netlify.com/)
 
 ## Multiple Themes
 
@@ -72,8 +72,4 @@ npm run dev
 
 ## Inspiration and Credits
 
-This project was forked from TODO
-
-## Author
-
-- [@hmohiuddin](https://hamismad.com)
+This project was forked from [satnaing/terminal-portfolio](https://github.com/satnaing/terminal-portfolio)
